@@ -1,8 +1,8 @@
 * {
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 18px;    
 }
 
 
@@ -93,8 +93,7 @@ main {
 
 .main-header{
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    
     align-items: center;
     text-align: center;
     height: 55px;
@@ -104,13 +103,13 @@ main {
     margin-top: 10px;
     margin-bottom: 12px;
     margin-left: 5px;
-    width: 35%;
+    width: 40%;
 }
 
 .tab{
     border-left: 2px solid #c7c7c7;
     border-bottom: 2px solid #c7c7c7;
-    width: 65%;
+    width: 60%;
     height: 55px;
 }
 
@@ -151,7 +150,21 @@ main {
 
 .traffic-header{
     padding-top: 30px;
-    padding-left: 18px;
+}
+
+h3{
+    padding-left: 18px;   
+}
+
+.daily h3,
+.mobile h3,
+.social h3,
+.members h3,
+.activity h3,
+.message h3,
+.settings h3{
+    padding-top: 18px;
+    padding-bottom: 35px;
 }
 
 .traffic-header ul{
@@ -159,9 +172,10 @@ main {
     text-align: center;
     padding-inline-start:0;
     display: inline-flex;
-    margin-right: 8px;
     padding-top: 15px;
     padding-bottom: 15px;
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
 .traffic-nav-link{
@@ -172,6 +186,8 @@ main {
 }
 
 .widget-container-full, .widget-container-half {
+    margin-right: 15px;
+    margin-left: 15px;
     padding-bottom: 18px;
     width: 95vw;
 }
@@ -179,6 +195,14 @@ main {
 section{
     border-bottom: 2px solid rgb(230, 227, 227);
 }
+
+.social-container{
+    display:flex;
+    border: 1px solid #c7c7c7;
+    width: 90%;
+    margin: auto;
+}
+
 
 /*======================================
             Media Queries
