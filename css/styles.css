@@ -7,6 +7,7 @@
 
 
 .grid-wrapper{
+    /* width:100%;  */
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -88,12 +89,13 @@ nav a svg {
 
 main {
     grid-area: main;
-    display: grid;
+    display: flex;
+    flex-direction: column;
 }
 
 .main-header{
     display: flex;
-    
+    width: 100%;
     align-items: center;
     text-align: center;
     height: 55px;
@@ -186,10 +188,9 @@ h3{
 }
 
 .widget-container-full, .widget-container-half {
-    margin-right: 15px;
-    margin-left: 15px;
+    margin:auto;
     padding-bottom: 18px;
-    width: 95vw;
+    width: 95%;
 }
 
 section{
@@ -198,11 +199,36 @@ section{
 
 .social-container{
     display:flex;
+    align-items: center;
     border: 1px solid #c7c7c7;
     width: 90%;
     margin: auto;
+    margin-bottom: 16px;
+    height: 120px;
+    border-radius: 8px;
 }
 
+.social-image{
+   width: 80px;
+    
+}
+
+.social-text p:nth-child(1){
+    font-size: 20px;
+    font-weight: bold;
+    color: #7477BF;
+}
+
+.social-text p:nth-child(2){
+    font-size: 50px;
+}
+
+svg{
+    /* fill: white; */
+    
+    width: 45px;
+    height: 45px;
+}
 
 /*======================================
             Media Queries
