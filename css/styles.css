@@ -35,6 +35,71 @@ header {
     transform-origin: 50% 50%;
 }
 
+.notification-dropdown{
+    top: 65px;
+    right: 50px;
+    width: 250px;
+    height: auto;
+    background-color: rgb(220, 220, 220);
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.425);
+    margin: 15px auto 0;
+    padding: 15px;
+    position: absolute;
+    display: none;
+}
+
+.notify-img img{
+    width: 50px;
+    border-radius: 50%;
+}
+
+.notification-dropdown .notify-item{
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 2px solid black;
+}
+
+.notification-dropdown .notify-item:last-child{
+    border-bottom: 0px;
+}
+
+.notification-dropdown .notify-item .notify-img{
+    margin-right: 15px;
+}
+
+.notification-dropdown .notify-item .notify-info p span{
+    color: #605dff;
+}
+
+.notification-dropdown .notify-item .notify-info .notify-time{
+    font-size: 12px;
+}
+
+.notify-info p,
+.notify-info span{
+    color: black;
+}
+
+.notification-dropdown:before{
+    content:"";
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 15px solid;
+    border-color: transparent transparent rgba(220, 220, 220, 0.74) transparent;
+}
+
+.notification-dropdown.active{
+    display: block;
+}
+
+ .bell{
+    cursor: pointer;
+}
+
 header h1{
     font-size: 21px;
     text-align:center;
@@ -99,8 +164,15 @@ nav a svg {
     width: 33px;
     margin: 15px;
     fill: white;
+    cursor: pointer;
 }
 
+.active{
+    background-color: #78CF82;
+    border-radius: 20px;
+    border: none;
+    transition: background-color .2s;
+}
 
 
 main {
@@ -210,7 +282,9 @@ h3{
     padding-left: 10px;
     padding-right: 10px;
     font-weight: bold;
+    cursor: pointer;
 }
+
 
 .widget-container-full, .widget-container-half {
     margin:auto;
@@ -288,6 +362,10 @@ svg{
     border-bottom: 2px solid rgb(230, 227, 227);
 }
 
+a{
+    text-decoration: none;
+}
+
 .activity-arrow{
      display: none;   
 }
@@ -313,15 +391,50 @@ button{
     border-radius: 5px;
 }
 
-input{
+.autocomplete input{
     height: 60px;
+    width: 100%;
 }
+
+.autocomplete {
+    /*the container must be positioned relative:*/
+    position: relative;
+    display: inline-block;
+    width:90%;
+}
+
+.autocomplete-items {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    border-bottom: none;
+    border-top: none;
+    z-index: 99;
+    /*position the autocomplete items to be the same width as the container:*/
+    top: 100%;
+    left: 0;
+    right: 0;
+  }
+  .autocomplete-items div {
+    padding: 10px;
+    cursor: pointer;
+    background-color: #fff;
+    border-bottom: 1px solid #d4d4d4;
+  }
+  .autocomplete-items div:hover {
+    /*when hovering an item:*/
+    background-color: #e9e9e9;
+  }
+  .autocomplete-active {
+    /*when navigating through the items using the arrow keys:*/
+    background-color: DodgerBlue !important;
+    color: #ffffff;
+  }
 
 .form-field,
 .form-area,
 .button-primary,
 .button-disabled{
-    border: 2px solid rgb(230, 227, 227);
+    border: 2px solid rgb(182, 180, 180);
 }
 
 textarea{
@@ -332,6 +445,7 @@ button{
     height:60px;
     color: white;
     background-color: #7477BF;
+    cursor: pointer;
 }
 
 .toggles,
@@ -360,6 +474,7 @@ button{
 
 .switch-ios.switch-light span span{
     color: white;
+    cursor:pointer;
 }
 
 .switch-ios.switch-light a{
@@ -431,6 +546,11 @@ label{
         text-align: left;
     }
 
+    .notification-dropdown{
+        right: 10px;
+        z-index: 1;
+    }
+
     .vertical{
         position:unset;
     }
@@ -499,12 +619,16 @@ label{
 
     .daily-mobile{
         display:flex;
-        height: 300px;
     }
 
     .daily{
         border-right: 2px solid rgb(230, 227, 227);
         
+    }
+
+    .daily h3,
+    .mobile h3{
+        padding-bottom: 10px;
     }
 
     .widget-container-full {
@@ -517,6 +641,7 @@ label{
         margin: 15px;
         width: 45vw;
     }
+
 
     .social h3{
         padding-bottom: 15px;
@@ -536,7 +661,6 @@ label{
 
     svg{
         width: 35px;
-        height: 35px;
     }
 
     .social-container{
@@ -576,7 +700,10 @@ label{
         color: #818181;
    }
 
-   input, textarea, button {
+
+    .autocomplete, 
+    textarea, 
+    button {
     width: 95%;
    }
 
@@ -594,12 +721,64 @@ label{
        width: 95%;
    }
 
-   .form-field:first-child{
-      color:  rgb(160, 158, 158);
-   }
+
 
    #timezone{
        background-position: 98%;
    }
 
 } 
+
+@media (min-width: 1024px) {
+
+    .notification-dropdown{
+        right: 42px;
+        z-index: 1;
+    }
+
+    .members-activity-message-settings{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas: 
+            "members activity"
+            "message settings";
+    }
+
+    .members{
+        grid-area: members;
+    }
+
+    .activity{
+        grid-area: activity;
+    }
+
+    .message{
+        grid-area: message;
+    }
+
+    .settings{
+        grid-area: settings;
+    }
+
+    .activity,
+    .settings{
+        border-left: 2px solid rgb(230, 227, 227);
+    }
+
+    .activity-container{
+        text-align: left;
+    }
+
+    .widget-container{
+        width: 99%;
+    }
+
+    .switch-light{
+        width: 75%;
+    }
+
+    textarea{
+        height: 157px;
+    }
+
+}
