@@ -2,12 +2,11 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;    
+    font-size: 18px;
 }
 
 
 .grid-wrapper{
-    width:100%; 
     display: grid;
     grid-template-columns: 100%;
     grid-template-rows: auto;
@@ -84,9 +83,9 @@ header {
 
 .notification-dropdown:before{
     content:"";
-    position: absolute;
+    position:absolute;
     top: -30px;
-    left: 50%;
+    left: 56%;
     transform: translateX(-50%);
     border: 15px solid;
     border-color: transparent transparent rgba(220, 220, 220, 0.74) transparent;
@@ -235,7 +234,7 @@ main {
 .alert-banner-close{
     padding-right: 30px;
     width: 10%;
-    
+    cursor: pointer;
 }
 
 .traffic-header{
@@ -528,6 +527,9 @@ label{
 =======================================*/
 
 @media (min-width: 768px) {
+
+
+
     .grid-wrapper{
         display: grid;
         grid-template-columns: 85px 1fr;
@@ -538,7 +540,6 @@ label{
 
     header{
         justify-content: flex-end;
-        
     }
 
     header h1 {
@@ -549,6 +550,10 @@ label{
     .notification-dropdown{
         right: 10px;
         z-index: 1;
+    }
+
+    .notification-dropdown:before{
+        left: 71px;
     }
 
     .vertical{
@@ -623,7 +628,6 @@ label{
 
     .daily{
         border-right: 2px solid rgb(230, 227, 227);
-        
     }
 
     .daily h3,
@@ -633,13 +637,13 @@ label{
 
     .widget-container-full {
         position: relative;
-        width: 92vw;
+        width: 85vw;
     }
 
     .widget-container-half {
         position: relative;
         margin: 15px;
-        width: 45vw;
+        width: 40vw;
     }
 
 
@@ -655,8 +659,8 @@ label{
 
     .social-image{
         margin:auto;
-        width: 70px;
-        height: 70px;
+        width: 60px;
+        height: 60px;
     }
 
     svg{
@@ -667,8 +671,12 @@ label{
         width: 32%;
     }
 
+    .social-text{
+        width: 60%;
+    }
+
     .social-text p:nth-child(2){
-        font-size: 45px;
+        font-size: 35px;
         margin-right: 20px;
     }
 
@@ -731,9 +739,14 @@ label{
 
 @media (min-width: 1024px) {
 
+
     .notification-dropdown{
         right: 42px;
         z-index: 1;
+    }
+
+    .notification-dropdown:before{
+        left: 84px;
     }
 
     .members-activity-message-settings{
@@ -746,6 +759,10 @@ label{
 
     .members{
         grid-area: members;
+    }
+
+    .member-img-comment{
+        height: 80px;
     }
 
     .activity{
@@ -763,10 +780,12 @@ label{
     .activity,
     .settings{
         border-left: 2px solid rgb(230, 227, 227);
+        height: fit-content;
     }
 
     .activity-container{
         text-align: left;
+        height: 122px;
     }
 
     .widget-container{
