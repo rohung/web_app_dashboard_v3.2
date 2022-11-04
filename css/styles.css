@@ -595,12 +595,18 @@ label{
 
     .alert,
     .alert-banner{
-        width: 100%;
+        width: 98%;
     }
 
     .alert-banner-close{
         text-align: right;
     }
+
+    .traffic,
+    .daily-mobile{
+        width: 98%;
+    }
+
 
     .traffic-header{
         display:flex;
@@ -642,7 +648,7 @@ label{
 
     .widget-container-half {
         position: relative;
-        margin: 15px;
+        margin: 9px;
         width: 40vw;
     }
 
