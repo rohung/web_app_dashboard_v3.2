@@ -14,7 +14,7 @@ const send = document.getElementById("send");
 
 
 alertBanner.innerHTML = `<div class="alert-banner">
-                            <p>Alert: You have 6 unread messages</p>
+                            <p>Alert: You have unread messages</p>
                             <p class="alert-banner-close">x</p>
                         </div>`;
 

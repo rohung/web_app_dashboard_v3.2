@@ -2,7 +2,8 @@
     box-sizing: border-box;
     margin: 0;
     font-family: 'Roboto', sans-serif;
-    font-size: 18px;
+    font-size: 18px; 
+  
 }
 
 
@@ -126,7 +127,6 @@ header h1{
     border-right: 1px solid rgba(173, 173, 173, 0.808);
     height: 40px;
     width: 8px;
-    position:absolute;
     left: 50%;
     margin-top: 15px;
     padding-left: 14px;
@@ -137,16 +137,16 @@ header img{
     padding-top: 15px;
     width: 40px;
     border-radius: 50%;
-    margin-left: 20px;
+    margin-left: 10px;
 }
 
 
  header h3{
     display: flex;
     align-items: center;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 100;
-    padding-right: 15px;
+    padding-left:10px;
 }
 
 nav {
@@ -272,8 +272,13 @@ h3{
     display: inline-flex;
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-left: 20px;
-    margin-right: 20px;
+}
+
+.traffic-nav{
+    width: 100%;
+    margin: auto;
+    justify-content: space-between;
+    
 }
 
 .traffic-nav-link{
@@ -310,14 +315,14 @@ section,
 }
 
 .social-image{
-   width: 80px;
-   height: 80px;
+   width: 70px;
+   height: 70px;
    display: flex;
    justify-content: center;
    align-items: center;
    background-color: #7477BF;
    border-radius: 100%;
-   margin: 20px;
+   margin: 8px;
 }
 
 
@@ -447,12 +452,20 @@ button{
     cursor: pointer;
 }
 
+
+
+
+.switch-light strong{
+    font-size: 14px;
+    font-weight: bold;
+}
+
 .toggles,
 .timezone-field{
     display: flex;
     flex-direction: column;
     align-items: left;
-    width: 90%;
+    width: 100%;
     margin: auto;
 }
 
@@ -465,7 +478,7 @@ button{
 }
 
 .switch-ios.switch-light > span{
-    width: 30%;
+    width: 40%;
     margin-left: auto;
     background-color: #7477BF;
     border: 2px solid rgba(173, 173, 173, 0.959);
@@ -616,6 +629,10 @@ label{
         padding-top: 15px;
     }
 
+    .traffic-nav{
+        justify-content: right;
+    }
+
     .traffic, .social {
         grid-column: 1 / span 2;
     }
@@ -745,6 +762,10 @@ label{
 
 @media (min-width: 1024px) {
 
+    .alert{
+        width: 100%;
+    }
+
 
     .notification-dropdown{
         right: 42px;
@@ -755,6 +776,10 @@ label{
         left: 84px;
     }
 
+    .widget-container-full{
+        width: 90vw;
+    }
+
     .members-activity-message-settings{
         display: grid;
         grid-template-columns: 1fr 1fr;
@@ -762,6 +787,7 @@ label{
             "members activity"
             "message settings";
     }
+
 
     .members{
         grid-area: members;
